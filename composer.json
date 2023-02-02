@@ -1,0 +1,14 @@
+{
+    "name": "adria/music-for-agood-day",
+    "description": "Database connection",
+    "type": "project",
+    "authors": [
+        {
+            "name": "adria15gomez",
+            "email": "adria15gomez@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
