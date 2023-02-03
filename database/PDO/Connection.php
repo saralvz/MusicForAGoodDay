@@ -47,5 +47,5 @@ class Connection
 }
 
 
-$db = Connection::getInstance();
-$conn = $db->get_instance_database();
+// $db = Connection::getInstance();
+// $conn = $db->get_instance_database();

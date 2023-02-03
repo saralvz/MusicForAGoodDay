@@ -1,5 +1,7 @@
 <?php
 
+use Database\PDO\Connection;
+
 class Song{
     // public string $id;
     public string $name;
@@ -23,7 +25,8 @@ class Song{
 
 $song = new Song ("Thank you, next", "Ariana Grande", "pop", "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2018/11/06/15415072469377.jpg", "https://www.youtube.com/watch?v=gl1aHhXnN1k");
 
-
+$db = Connection::getInstance();
+$conn = $db->get_instance_database();
 
 
 
