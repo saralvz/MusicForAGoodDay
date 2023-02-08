@@ -31,7 +31,7 @@ class Songs{
 	function create(){
 		
 		$stmt = $this->conn->prepare("
-			INSERT INTO ".$this->songsTable."(`songName`, `artistName`, `songGender`, `youtubeUrl`, `imgUrl`, `listened`, `users_id`)
+			INSERT INTO ".$this->songsTable."(`songName`, `artistName`, `songGender`, `youtubeUrl`, `imgUrl`, `listened`,`users_id`)
 			VALUES(?,?,?,?,?,?,?)");
 		
 		$this->songName = htmlspecialchars(strip_tags($this->songName));
@@ -43,7 +43,7 @@ class Songs{
 		$this->users_id = htmlspecialchars(strip_tags($this->users_id));
 		
 		
-		$stmt->bind_param("sssss", $this->songName, $this->artistName, $this->songGender, $this->youtubeUrl, $this->imgUrl);
+		$stmt->bind_param("sssssii", $this->songName, $this->artistName, $this->songGender, $this->youtubeUrl, $this->imgUrl, $this->listened, $this->users_id);
 		
 		if($stmt->execute()){
 			return true;
