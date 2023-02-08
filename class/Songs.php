@@ -31,16 +31,16 @@ class Songs{
 	function create(){
 		
 		$stmt = $this->conn->prepare("
-			INSERT INTO ".$this->songsTable."(`songName`, `artistName`, `songGender`, `youtubeUrl`, `imgUrl`)
-			VALUES(?,?,?,?,?)");
+			INSERT INTO ".$this->songsTable."(`songName`, `artistName`, `songGender`, `youtubeUrl`, `imgUrl`, `listened`, `users_id`)
+			VALUES(?,?,?,?,?,?,?)");
 		
 		$this->songName = htmlspecialchars(strip_tags($this->songName));
 		$this->artistName = htmlspecialchars(strip_tags($this->artistName));
 		$this->songGender = htmlspecialchars(strip_tags($this->songGender));
 		$this->youtubeUrl = htmlspecialchars(strip_tags($this->youtubeUrl));
 		$this->imgUrl = htmlspecialchars(strip_tags($this->imgUrl));
-		// $this->listened = htmlspecialchars(strip_tags($this->listened));
-		// $this->users_id = htmlspecialchars(strip_tags($this->users_id));
+		$this->listened = htmlspecialchars(strip_tags($this->listened));
+		$this->users_id = htmlspecialchars(strip_tags($this->users_id));
 		
 		
 		$stmt->bind_param("sssss", $this->songName, $this->artistName, $this->songGender, $this->youtubeUrl, $this->imgUrl);
