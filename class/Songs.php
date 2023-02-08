@@ -8,8 +8,8 @@ class Songs{
     public $songGender;
     public $youtubeUrl;   
     public $imgUrl; 
-	public $listened; 
-	public $users_id;
+		public $listened; 
+		public $users_id;
     private $conn;
 	
     public function __construct($db){
@@ -48,17 +48,17 @@ class Songs{
 		if($stmt->execute()){
 			return true;
 		}
-	 
+
 		return false;		 
 	}
 		
 	function update(){
-	 
+
 		$stmt = $this->conn->prepare("
 			UPDATE ".$this->songsTable." 
 			SET songName= ?, artistName = ?, songGender = ?, youtubeUrl = ?, imgUrl = ?, listened = ?, users_id = ?
 			WHERE id = ?");
-	 
+
 		$this->id = htmlspecialchars(strip_tags($this->id));
 		$this->songName = htmlspecialchars(strip_tags($this->songName));
 		$this->artistName = htmlspecialchars(strip_tags($this->artistName));
@@ -67,13 +67,12 @@ class Songs{
 		$this->imgUrl = htmlspecialchars(strip_tags($this->imgUrl));
 		$this->listened = htmlspecialchars(strip_tags($this->listened));
 		$this->users_id = htmlspecialchars(strip_tags($this->users_id));
-	 
+
 		$stmt->bind_param("sssssiii", $this->songName, $this->artistName, $this->songGender, $this->youtubeUrl, $this->imgUrl, $this->listened, $this->users_id, $this->id);
 		
 		if($stmt->execute()){
 			return true;
 		}
-	 
 		return false;
 	}
 	
@@ -84,13 +83,13 @@ class Songs{
 			WHERE id = ?");
 			
 		$this->id = htmlspecialchars(strip_tags($this->id));
-	 
+
 		$stmt->bind_param("i", $this->id);
-	 
+
 		if($stmt->execute()){
 			return true;
 		}
-	 
+
 		return false;		 
 	}
 }

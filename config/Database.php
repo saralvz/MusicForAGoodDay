@@ -1,11 +1,11 @@
 <?php
 class Database{
-	
-	private $host  = 'localhost';
+
+		private $host  = 'localhost';
     private $user  = 'root';
     private $password   = "";
     private $database  = "music"; 
-    
+
     public function getConnection(){		
 		$conn = new mysqli($this->host, $this->user, $this->password, $this->database);
 		if($conn->connect_error){
@@ -13,6 +13,6 @@ class Database{
 		} else {
 			return $conn;
 		}
-    }
+  }
 }
 ?>
