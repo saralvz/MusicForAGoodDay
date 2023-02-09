@@ -7,7 +7,7 @@ include_once '../class/Songs.php';
 
 $database = new Database();
 $db = $database->getConnection();
- 
+
 $songs = new Songs($db);
 
 $songs->id = (isset($_GET['id']) && $_GET['id']) ? $_GET['id'] : '0';
@@ -29,7 +29,7 @@ if($result->num_rows > 0){
             "listened" => $listened	,
             "users_id" => $users_id		
         ); 
-       array_push($songRecords["songs"], $songDetails);
+        array_push($songRecords["songs"], $songDetails);
     }    
     http_response_code(200);     
     echo json_encode($songRecords);
