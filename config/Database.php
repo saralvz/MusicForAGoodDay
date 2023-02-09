@@ -1,10 +1,18 @@
 <?php
 class Database{
 	
-	private $host  = 'localhost';
-    private $user  = 'root';
-    private $password   = "";
-    private $database  = "music"; 
+	private $host;
+    private $user;
+    private $password;
+    private $database; 
+    
+    public function __construct() {
+        $config = parse_ini_file('config.ini');
+        $this->host = $config['host'];
+        $this->user = $config['user'];
+        $this->password = $config['password'];
+        $this->database = $config['database'];
+    }
     
     public function getConnection(){		
 		$conn = new mysqli($this->host, $this->user, $this->password, $this->database);
