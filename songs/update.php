@@ -21,10 +21,10 @@ if(!empty($data->id) && !empty($data->songName) &&
 	
 	$songs->id = $data->id; 
 	$songs->songName = $data->songName;
-    $songs->artistName = $data->artistName;
-    $songs->songGender = $data->songGender;
-    $songs->youtubeUrl = $data->youtubeUrl;	
-    $songs->imgUrl = $data->imgUrl;
+  $songs->artistName = $data->artistName;
+  $songs->songGender = $data->songGender;
+  $songs->youtubeUrl = $data->youtubeUrl;	
+  $songs->imgUrl = $data->imgUrl;
 	$songs->listened = $data->listened; 
 	$songs->users_id = $data->users_id; 
 	
