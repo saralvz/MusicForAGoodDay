@@ -1,5 +1,5 @@
 <?php
-class Database
+class DatabaseTest
 {
 
   private $host;
@@ -9,7 +9,7 @@ class Database
 
   public function __construct()
   {
-    $config = parse_ini_file('config.ini');
+    $config = parse_ini_file('configTest.ini');
     $this->host = $config['host'];
     $this->user = $config['user'];
     $this->password = $config['password'];
