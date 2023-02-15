@@ -7,7 +7,7 @@ include_once '../class/Songs.php';
 
 $database = new Database();
 $db = $database->getConnection();
- 
+
 $songs = new Songs($db);
 
 $songs->id = (isset($_GET['id']) && $_GET['id']) ? $_GET['id'] : '0';
